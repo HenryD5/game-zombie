@@ -1,0 +1,112 @@
+@import 'variables';
+
+.display {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 70.75px;
+    font-size: $fs-4xl;
+    letter-spacing: 5.5%;
+    color: $white; 
+}
+
+.display-2 {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 47.17px;
+    font-size: $fs-2xl;
+    letter-spacing: 5.5%;
+    color: $white;  
+}
+
+.display-3 {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 35.38px;
+    font-size: $fs-xl !important;
+    letter-spacing: 5.5%;
+    color: $white;  
+}
+
+.title {
+    font-family: $font-family-primary;
+    font-weight: 400;
+    line-height: 74.81px;
+    font-size: $fs-4-5xl;
+    letter-spacing: 5.5%;
+    color: $primary; 
+}
+
+.title-2 {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 70.75px;
+    font-size: $fs-4xl;
+    letter-spacing: 5.5%;
+    color: $primary; 
+}
+.span-text {
+    color: $primary !important;  
+}
+.text-btn {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 53.06px;
+    font-size: $fs-2-5xl;
+    letter-spacing: 5.5%;
+    color: $white;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+        color: white;
+        text-shadow: 0px 0px 30px #FFFFFF;
+    } 
+}
+
+.text-input {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 54.58px;
+    font-size: $fs-2-5xl;
+    letter-spacing: 5.5%;
+    color: $cl-text; 
+}
+.text-name {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 23.58px;
+    font-size: $fs-m;
+    letter-spacing: 5.5%;
+    color: $white; 
+}
+.text-error {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 23.58px;
+    font-size: $fs-s;
+    letter-spacing: 5.5%;
+    color: $errors; 
+}
+.text-number {
+    font-family: $font-family-default;
+    font-weight: 800;
+    line-height: 17.66px;
+    font-size: $fs-m;
+    letter-spacing: 34%;
+    color: $bg-card; 
+}
+.text-position {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 23.58px;
+    font-size: $fs-m;
+    letter-spacing: 5.5%;
+    color: $text-card; 
+}
+.text-ranking {
+    font-family: $font-family-default;
+    font-weight: 400;
+    line-height: 29.48px;
+    font-size: $fs-lg-x;
+    letter-spacing: 5.5%;
+    color: $white; 
+}
