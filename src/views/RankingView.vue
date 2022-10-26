@@ -1,5 +1,5 @@
 <template>
-  <AppLayout>
+  <AppLayout :view="'ranking-i'">
     <div>
       <div class="container mx-auto section-game">
         <div class="flex flex-col md:flex-row md:justify-between">

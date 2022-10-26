@@ -1,5 +1,6 @@
 <template>
-  <AppLayout>
+  <AppLayout :view="'game'">
+    <br />
     <div>
       <div class="container mx-auto section-game">
         <div class="flex flex-col md:flex-row md:items-center">

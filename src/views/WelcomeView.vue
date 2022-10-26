@@ -1,5 +1,5 @@
 <template>
-  <AppLayout>
+  <AppLayout :view="'welcome'">
     <div>
       <div class="container mx-auto section-game">
         <div class="display-2 w-full md:w-8/12 my-10 py-4">
