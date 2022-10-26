@@ -274,3 +274,18 @@ input[type="email"]:active {
     position: relative;
   }
 }
+
+.mt-img-game {
+  @media (min-width: 1200px) {
+    margin-top: 7rem;
+  }
+  @media (min-width: 1400px) {
+    margin-top: 9rem;
+  }
+  @media (min-width: 1600px) {
+    margin-top: 11rem;
+  }
+  @media (min-width: 1800px) {
+    margin-top: 12rem;
+  }
+}

@@ -1,11 +1,10 @@
 <template>
   <AppLayout :view="'game'">
-    <br />
     <div>
-      <div class="container mx-auto section-game">
+      <div class="container mx-auto section-game mt-img-game">
         <div class="flex flex-col md:flex-row md:items-center">
           <div class="w-full md:w-2/12"></div>
-          <div class="title w-full md:w-8/12 my-10 py-4 text-center">
+          <div class="title w-full md:w-8/12 mt-10 mb-8 py-4 text-center">
             ¿A QUIÉN RESCATARÁS?
           </div>
           <div
@@ -15,7 +14,7 @@
             <span class="ml-5"> <img src="/save.svg" alt="icon zombie mv"> </span>
           </div>
         </div>
-        <div class="my-10 py-4">
+        <div class="mt-8 mb-10 py-4">
           <div class="flex flex-row flex-wrap">
             <div
               class="w-1/2 md:w-1/5"
