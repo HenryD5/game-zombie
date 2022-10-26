@@ -243,16 +243,20 @@ input[type="email"]:active {
       max-height: 110vh;
       height: 100%;
       .rank-1 {
+        position: fixed;
         height: 100vh;
-        width: 130px;
+        width: 150px;
         top: 0px;
-        left: -30px;
+        left: 0px;
         @media (max-width: 768px) {
           display: none !important;
         }
+        @media (min-width: 1380px) {
+          width: 180px;
+        }
       }
       .rank-2 {
-        position: absolute;
+        position: fixed;
         right: 0 !important;
         bottom: -20px !important;
         width: 430px;
