@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
         beforeEnter: (to, from, next) => {
             const data = getAuthData()
             const dataUser = JSON.parse(data)
-            if (!dataUser.completed) {
+            if (!dataUser.has_vote) {
                 next()
             } else {
                 next({ name: 'Ranking' })
@@ -46,7 +46,7 @@ const routes: RouteRecordRaw[] = [
         beforeEnter: (to, from, next) => {
             const data = getAuthData()
             const dataUser = JSON.parse(data)
-            if (!dataUser.completed) {
+            if (!dataUser.has_vote) {
                 next()
             } else {
                 next({ name: 'Ranking' })
@@ -64,7 +64,7 @@ const routes: RouteRecordRaw[] = [
         beforeEnter: (to, from, next) => {
             const data = getAuthData()
             const dataUser = JSON.parse(data)
-            if (dataUser.completed) {
+            if (dataUser.has_vote) {
                 next()
             } else {
                 next({ name: 'Welcome' })

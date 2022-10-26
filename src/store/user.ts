@@ -6,7 +6,7 @@ interface UserState {
     user:     User | undefined;
     page: number;
     perPage: number;
-    usersWin: User[],
+    usersWin: number[],
     listUsersWins: User[],
     loading: boolean
 }
@@ -17,18 +17,22 @@ export const useUserStore =  defineStore('user', {
         userArr: [],
         user: undefined,
         page: 1,
-        perPage: 8,
+        perPage: 10,
         usersWin: [],
         listUsersWins: [],
         loading: false
     }),
 
     actions: {
-        loadUsers( users: User[] ) {
-            this.userArr = users;
+        loadUsers( users: User[] | undefined) {
+            if(users !== undefined) {
+                this.userArr = users;
+            }
         },
-        loadUsersWins( users: User[] ) {
-            this.listUsersWins = users;
+        loadUsersWins( users: User[] | undefined ) {
+            if(users !== undefined) {
+                this.listUsersWins = users;
+            }
         },
         setUser( user: User ) {
             this.user = user;
@@ -36,8 +40,8 @@ export const useUserStore =  defineStore('user', {
         setLoading( val: boolean ) {
             this.loading = val;
         },
-        setUserWin(user: User) {
-           this.usersWin.push(user)
+        setUserWin(userId: number) {
+           this.usersWin.push(userId)
         },
         clearUserWins() {
            this.usersWin = []

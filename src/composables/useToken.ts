@@ -4,8 +4,8 @@ const { cookies } = useCookies();
 
 export const useToken = () => {
 
-    const setToken = (email: string) => {
-        cookies.set('AUTH_TOKEN', email, '7d')
+    const setToken = (userId: number) => {
+        cookies.set('AUTH_TOKEN', userId.toString(), '7d')
     }
 
     const getToken = () => {

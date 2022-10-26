@@ -26,15 +26,15 @@
                 :key="userItem.id"
               >
                 <div class="flex flex-row justify-between items-center">
-                  <div class="w-3/12 text-center">
+                  <div class="w-2/12 text-center">
                     <div class="ranking__item-img">
-                      <img :src="userItem.images[0]" alt="" />
+                      <img :src="userItem.url_photo" alt="" />
                     </div>
                   </div>
-                  <div class="w-6/12 text-center text-ranking">
+                  <div class="w-8/12 text-center text-ranking">
                     {{ userItem.name }}
                   </div>
-                  <div class="w-3/12 text-center text-ranking">
+                  <div class="w-2/12 text-center text-ranking">
                     +{{ userItem.points }}
                   </div>
                 </div>

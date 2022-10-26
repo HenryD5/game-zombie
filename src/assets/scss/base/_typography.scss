@@ -55,7 +55,7 @@
     letter-spacing: 5.5%;
     color: $white;
     opacity: 0.5;
-    &:hover {
+    &:hover, &.active {
         opacity: 1;
         color: white;
         text-shadow: 0px 0px 30px #FFFFFF;

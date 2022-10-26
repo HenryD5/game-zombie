@@ -1,14 +1,12 @@
-// import gameApi from '../api/gameApi'
-import { User } from '../interfaces/user';
+import gameApi from '../api/gameApi'
 
-
-const setArrUsersWins = async (items: User[]): Promise<Boolean> => {
-    console.log('save users wins ...', items)
-    return true
+const setArrUsersWins = async (userId: number, items: number[]): Promise<object | undefined> => {
+    const result = gameApi.post(`votes/save-vote`, {userId: userId, votes: items})
+    return result
 }
 
-const setUsersWins = async (items: User[]) => {
-    const users = await setArrUsersWins(items);
+const setUsersWins = async (userId: number, items: number[]) => {
+    const users = await setArrUsersWins(userId, items);
     return users;
 }
 

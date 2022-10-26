@@ -22,15 +22,15 @@
               :key="userItem.id"
             >
               <div class="card" @click="setSaveUser(userItem)">
-                <div class="card__image" v-if="userItem.images.length > 0">
-                  <img :src="userItem.images[0]" alt="" />
+                <div class="card__image">
+                  <img :src="userItem.url_photo" alt="" />
                 </div>
                 <div class="card__image-hover">
-                  <img :src="userItem.images[1]" alt="" />
+                  <img :src="userItem.url_photo_horror" alt="" />
                 </div>
                 <div class="text-center card__footer">
                   <div class="text-name pt-2 pb-1">{{ userItem.name }}</div>
-                  <div class="text-position">{{ userItem.position }}</div>
+                  <div class="text-position">{{ userItem.area }}</div>
                 </div>
               </div>
             </div>
@@ -44,6 +44,7 @@
 import AppLayout from "../layouts/AppLayout.vue";
 import { useUsers } from "../composables/useUsers";
 import { useUserStore } from "../store/user";
+import { onMounted } from "vue";
 
 const userStore = useUserStore();
 
@@ -62,5 +63,8 @@ const {
   totalPage,
 } = useUsers();
 
-mixUserArray();
+onMounted(() => {
+  mixUserArray();
+})
+
 </script>

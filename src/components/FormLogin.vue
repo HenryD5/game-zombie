@@ -10,6 +10,8 @@
           class="bg-input px-2 py-3 rounded-md block mb-2 placeholder:px-2 placeholder:cl-place w-full"
           autofocus
           placeholder="Usa tu correo de manzana"
+          @focus="state.active = true"
+          @blur="state.active = false"
         />
         <div class="my-4 text-error" v-if="state.msgError">
           {{ state.msgError }}
@@ -19,6 +21,7 @@
         <button
           type="submit"
           class="block px-2 py-0 rounded-md w-full btn-form text-btn"
+          :class="{active : state.active}"
         >
           ¡AYUDANOS!
         </button>
@@ -42,6 +45,7 @@ const { authUser } = useUsers();
 const state = reactive({
   email: "",
   msgError: "",
+  active: false
 });
 
 function setMsgError() {
@@ -70,9 +74,8 @@ function isEmailValid() {
 
 async function login() {
   const data = await authUser(state.email) 
-
   if (data !== undefined) {
-    setToken(state.email)
+    setToken(data?.id)
     setAuthData(JSON.stringify(data))
     users.setLoading(false);
     router.push({ name: "Welcome" });

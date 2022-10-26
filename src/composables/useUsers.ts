@@ -32,27 +32,37 @@ export const useUsers = () => {
     const setSaveUser = async (user: User) => {
         const total = Math.ceil(userArr.value.length / perPage.value)
         if (page.value !== total) {
+            userStore.setLoading(true);
             page.value += 1;
-            userStore.setUserWin(user)
+            userStore.setUserWin(user.id)
+            setTimeout(() => {
+                userStore.setLoading(false);
+            }, 1000);
         } else if (page.value === total) {
-            
-            userStore.setUserWin(user)
-            updateAuthData('completed', true)
 
-            await setUsersWins(userStore.usersWin)
-            .then((value) => {
-                console.log(value); // "Success!"
-                userStore.clearUserWins()
-                router.push({ name: "Ranking" });
-            })
-            .catch((e) => {
-                console.error(e.message); // "oh, no!"
-            })
+            userStore.setLoading(true);
+            userStore.setUserWin(user.id)
+            updateAuthData('has_vote', true)
+
+            await setUsersWins(user.id, userStore.usersWin)
+                .then((value) => {
+                     // "Success!"
+                    userStore.clearUserWins()
+                    userStore.setLoading(false);
+                    router.push({ name: "Ranking" });
+                })
+                .catch((e) => {
+                    userStore.setLoading(false);
+                    console.error(e.message); 
+                    // "oh, no!"
+                })
         }
     };
 
     const mixUserArray = async () => {
-        userStore.loadUsers(await getUserOptions());
+        if (user.value !== undefined) {
+            userStore.loadUsers(await getUserOptions(user.value.id));
+        }
     };
 
     const mixUsersWinsArray = async () => {
