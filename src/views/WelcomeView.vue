@@ -17,7 +17,7 @@
             <div class="w-full md:w-8/12"></div>
             <div class="w-full md:w-4/12 md:pl-5 py-5 mt-5">
               <button
-                class="block px-2 py-0 rounded-md w-full btn-form text-btn"
+                class="block px-2 py-0 rounded-md w-full btn-form text-btn active"
                 @click="next()"
               >
                 SI, ADELANTE
